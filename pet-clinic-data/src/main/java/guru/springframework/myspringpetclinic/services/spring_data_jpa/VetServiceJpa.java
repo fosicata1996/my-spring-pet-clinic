@@ -20,9 +20,9 @@ public class VetServiceJpa implements VetService {
 
     @Override
     public Set<Vet> findAll() {
-        Set<Vet> owners = new HashSet<>();
-        vetRepository.findAll().forEach(owners::add);
-        return owners;
+        Set<Vet> vets = new HashSet<>();
+        vetRepository.findAll().forEach(vets::add);
+        return vets;
     }
 
     @Override
