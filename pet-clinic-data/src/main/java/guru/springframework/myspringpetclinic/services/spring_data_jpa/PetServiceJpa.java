@@ -3,10 +3,14 @@ package guru.springframework.myspringpetclinic.services.spring_data_jpa;
 import guru.springframework.myspringpetclinic.model.Pet;
 import guru.springframework.myspringpetclinic.repositories.PetRepository;
 import guru.springframework.myspringpetclinic.services.PetService;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@Service
+@Profile("springdatajpa")
 public class PetServiceJpa implements PetService {
     private final PetRepository petRepository;
 
