@@ -2,7 +2,6 @@ package guru.springframework.myspringpetclinic.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -19,7 +18,6 @@ public class Person extends BaseEntity {
     @Column(name = "last_name")
     private String lastName;
 
-    @Builder
     public Person(Long id, String firstName, String lastName) {
         super(id);
         this.firstName = firstName;
