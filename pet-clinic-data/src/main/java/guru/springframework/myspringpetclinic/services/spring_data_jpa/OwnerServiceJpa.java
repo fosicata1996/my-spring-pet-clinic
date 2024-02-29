@@ -3,6 +3,7 @@ package guru.springframework.myspringpetclinic.services.spring_data_jpa;
 import guru.springframework.myspringpetclinic.model.Owner;
 import guru.springframework.myspringpetclinic.repositories.OwnerRepository;
 import guru.springframework.myspringpetclinic.services.OwnerService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
@@ -11,13 +12,10 @@ import java.util.Set;
 
 @Service
 @Profile("jpa")
+@RequiredArgsConstructor
 public class OwnerServiceJpa implements OwnerService {
 
     private final OwnerRepository ownerRepository;
-
-    public OwnerServiceJpa(OwnerRepository ownerRepository) {
-        this.ownerRepository = ownerRepository;
-    }
 
     @Override
     public Set<Owner> findAll() {
