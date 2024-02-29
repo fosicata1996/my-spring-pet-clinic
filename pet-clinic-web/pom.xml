@@ -12,10 +12,6 @@
     <artifactId>pet-clinic-web</artifactId>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
         <webjars-bootstrap.version>5.3.2</webjars-bootstrap.version>
         <webjars-font-awesome.version>4.7.0</webjars-font-awesome.version>
         <libsass.version>0.2.29</libsass.version>
@@ -80,8 +76,6 @@
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>unpack</id>
-                        <?m2e execute onConfiguration,onIncremental?>
                         <phase>generate-resources</phase>
                         <goals>
                             <goal>unpack</goal>
