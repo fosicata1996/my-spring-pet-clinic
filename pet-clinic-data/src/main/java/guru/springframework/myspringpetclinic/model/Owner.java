@@ -34,6 +34,25 @@ public class Owner extends Person {
         this.address = address;
         this.city = city;
         this.telephone = telephone;
-        this.pets = pets;
+        if (pets != null) {
+            this.pets = pets;
+        }
+    }
+
+    public void add(Pet pet) {
+        this.pets.add(pet);
+        pet.setOwner(this);
+    }
+
+    public Pet getPet(String name, boolean ignoreNew) {
+        return pets.stream()
+                .filter(pet -> !ignoreNew || !pet.isNew())
+                .filter(pet -> pet.getName().equalsIgnoreCase(name))
+                .findFirst()
+                .orElse(null);
+    }
+
+    public Pet getPet(String name) {
+        return getPet(name, false);
     }
 }
