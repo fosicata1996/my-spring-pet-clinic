@@ -2,6 +2,7 @@ package guru.springframework.myspringpetclinic.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.util.CollectionUtils;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -39,7 +40,14 @@ public class Pet extends BaseEntity {
         this.petType = petType;
         this.owner = owner;
         this.birthDate = birthDate;
-        this.visits = visits;
+        if (!CollectionUtils.isEmpty(visits)) {
+            this.visits = visits;
+        }
+    }
+
+    public void add(Visit visit) {
+        this.visits.add(visit);
+        visit.setPet(this);
     }
 
     @Override
