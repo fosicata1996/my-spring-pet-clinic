@@ -53,6 +53,6 @@ public class OwnerServiceJpa implements OwnerService {
 
     @Override
     public List<Owner> findAllByLastNameLike(String lastName) {
-        return ownerRepository.findAllByLastNameLike(Optional.ofNullable(lastName).orElse(""));
+        return ownerRepository.findAllByLastNameLike("%" + Optional.ofNullable(lastName).orElse("") + "%");
     }
 }
